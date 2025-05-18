@@ -1,5 +1,3 @@
-
-
 EXP NO 26: C PROGRAM TO DISPLAY STACK ELEMENTS USING LINKED LIST.
 Aim:
 To write a C program to display stack elements using linked list.
@@ -15,11 +13,21 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+struct Node
+{
+int data;
+struct Node *next;
+}*head;
+void display()
+{
+struct Node *p; p=head; while(p!=NULL)
+{
+printf("%d\n",p->data); p=p->next;
+}
+}
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/425bf8c3-30f1-4953-9465-db4ab85323e9)
 
 
 Result:
@@ -40,11 +48,24 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+struct Node
+{
+int data;
+struct Node *next;
+}*head; void pop()
+{
+if(head==NULL)
+{
+printf("stack is empty");
+}
+else
+{
+head=head->next;
+}
+}
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/8d130c5a-08b5-4b61-85be-944edea3b8f8)
 
 
 
@@ -64,11 +85,27 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+struct Node
+{
+char data;
+struct Node *next;
+}*front=NULL,*rear=NULL; void display()
+{
+if(front==NULL)
+{
+printf("queue is empty");
+}
+else
+{
+printf("queue elements:\n"); while(front!=NULL)
+{
+printf("%c\n",front->data); front=front->next;
+}
+}
+}
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/da158893-65fb-4ced-8771-95ecf0ba95bd)
 
 Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -90,11 +127,25 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+struct Node
+{
+int data;
+struct Node *next;
+}*front=NULL,*rear=NULL; void enqueue(int data)
+{
+struct Node p=(struct Node)malloc(sizeof(struct Node)); p->data=data;
+p->next=NULL; if(front==NULL)
+{
+front=rear=p;
+}
+else
+{
+rear->next=p; rear=p;
+}
+}
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/49fee399-1ecc-4ccd-9884-6caabc1943af)
 
 Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -117,16 +168,21 @@ o	If the queue is not empty, return the data stored in the front node of the lin
 
 Program:
 
-//type your code here
-
+struct Node
+{
+   char data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void peek()
+{
+    printf("%c",front->data);
+}
 Output:
 
-//paste your output here
+![image](https://github.com/user-attachments/assets/fb439ed6-b005-4da5-bd76-8b11cddf955d)
 
 
 
 Result:
 
-Thus, the program to retrieve the "peek" (the front element) of a queue implemented using a linked list is verified successfully.
-
-
+Thus, the program to retrieve the "peek" (the front element) of a queue implemented using a linked list is verified successfully.
